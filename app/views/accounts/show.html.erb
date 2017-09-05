@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Email:</strong>
+  <%= current_account.email %>
+</p>
+
+<h2>Names</h2>
+<%- current_account.profiles.each do |profile| %>
+    <p>
+      Name: <%= profile.full_name %>
+      <br/>
+      Date of birth: <%= l(profile.date_of_birth, format: :long) %>
+    </p>
+<%- end %>
+
+<h2>Addresses</h2>
+<%- current_account.addresses.each do |address| %>
+    <p>
+      Address: <%= address.street %>
+      <%= address.house_number %>
+      <br/>
+      Postcode: <%= address.postcode %>
+    </p>
+<%- end %>
+
+<%= link_to "Sign out", sign_out_path %>

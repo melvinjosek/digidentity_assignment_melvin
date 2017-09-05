@@ -1,0 +1,24 @@
+<%= form_tag(confirmations_path, local: true) do |form| %>
+    <h2>Names</h2>
+    <%- current_account.profiles.each do |profile| %>
+        <p>
+          Name: <%= profile.full_name %>
+          <br/>
+          Date of birth: <%= l(profile.date_of_birth, format: :long) %>
+        </p>
+    <%- end %>
+
+    <h2>Addresses</h2>
+    <%- current_account.addresses.each do |address| %>
+        <p>
+          Address: <%= address.street %>
+          <%= address.house_number %>
+          <br/>
+          Postcode: <%= address.postcode %>
+        </p>
+    <%- end %>
+
+    <div class="actions">
+      <%= submit_tag "Confirm" %>
+    </div>
+<% end %>
