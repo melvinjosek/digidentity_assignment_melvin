@@ -16,3 +16,8 @@ A user can also logout
 * Setup cucumber and write some scenarios to test the registration and sign in.  
 * There may be some bugs present in the code, so you may create scenarios that are red, but should be green after bug fixing.  
 * You are not required to fix the bugs.  
+
+## Steps to Execute test
+1.	Copy contents of features.rar to the project directory.
+2.	Replace/Merge the gem file and run a bundle command.
+3.	Run a cucumber test from the project directory.
